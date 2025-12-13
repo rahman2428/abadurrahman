@@ -1,7 +1,7 @@
 :root{
   --bg:#0f1724;
   --card:#0b1220;
-  --muted:#9aa6b2;
+  --muted:#9aa6b2;           
   --accent:#6ee7b7;
   --glass: rgba(255,255,255,0.04);
   --radius:16px;
@@ -80,7 +80,11 @@ body{
   border: 1px solid rgba(110,231,183,0.18);
   color:var(--accent);
 }
-.btn.ghost{opacity:0.88}
+.btn.ghost{
+  background:linear-gradient(90deg, rgba(110,231,183,0.12), rgba(110,231,183,0.06));
+  border: 1px solid rgba(110,231,183,0.18);
+  color:var(--accent);
+}
 
 /* three container */
 #three-container{
@@ -113,7 +117,84 @@ body{
 #contactForm input{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
 
 /* footer */
-.site-footer{max-width:var(--maxw);margin:40px auto 80px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+/* ===== Professional Footer ===== */
+.site-footer {
+  max-width: var(--maxw);
+  margin: 64px auto 40px;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.01)
+  );
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  color: var(--muted);
+}
+
+/* Left section */
+.footer-brand {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #e6eef6;
+}
+
+.footer-desc {
+  margin: 10px 0 14px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-copy {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* Right links */
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.footer-links h4 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #e6eef6;
+}
+
+.footer-links a {
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .site-footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* admin controls */
 .admin-controls { display:none; align-items:center; gap:8px; }
