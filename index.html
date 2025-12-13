@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Abadurrahman — Full-Stack Developer</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- three.js (for 3D hero) -->
+    <script
+      src="https://unpkg.com/three@0.154.0/build/three.min.js"
+      defer
+    ></script>
+    <script
+      src="https://unpkg.com/three@0.154.0/examples/js/controls/OrbitControls.js"
+      defer
+    ></script>
+
+    <script
+      src="https://unpkg.com/three@0.154.0/examples/js/loaders/GLTFLoader.js"
+      defer
+    ></script>
+
+    <!-- GSAP for animations -->
+    <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js" defer></script>
+
+    <!-- main JS -->
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">ABADURRAHMAN</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="gallery.html">Photos</a>
+        <a href="about.html">About</a>
+        <a href="assets/resume.pdf" download class="btn">Download Resume</a>
+      </nav>
+      <button id="menuBtn" class="hamburger" aria-label="Menu">☰</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <h1>Hello — I’m <span class="accent">ABADURRAHMAN</span></h1>
+          <p class="subtitle">
+            3rd Semester B.Tech CSE • Full-Stack Web Developer (Learning &
+            Building)
+          </p>
+
+          <div class="hero-ctas">
+            <a class="btn primary" href="#work">View Work</a>
+            <a class="btn ghost" href="blog.html">Read My Blog</a>
+          </div>
+
+          <ul class="meta-list">
+            <li>✦ HTML • CSS • JavaScript</li>
+            <li>✦ Three.js • GSAP • Node (future backend)</li>
+            <li>✦ Responsive • Accessible • Fast</li>
+          </ul>
+        </div>
+
+        <div class="hero-right">
+          <!-- Canvas for Three.js -->
+          <div id="three-container" aria-hidden="true">
+            <img
+              src="assets/photos/photo8.jpg"
+              alt="my profile photo"
+              style="
+                width: 100%;
+                max-width: 400px;
+                height: auto;
+                display: block;
+              "
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="card-media">
+              <img
+                src="assets/images/project4.webp"
+                alt="Interactive 3D Menu screenshot"
+              />
+            </div>
+            <h3>Interactive 3D Menu (AR Demo)</h3>
+            <p>
+              WebAR restaurant menu with 3D models, zoom, and category filters.
+            </p>
+            <a class="link" href="#" target="_blank" rel="noopener noreferrer"
+              >View project</a
+            >
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img
+                src="assets/images/project2.png"
+                alt="Interactive 3D Menu screenshot"
+              />
+            </div>
+            <h3>Portfolio CMS</h3>
+            <p>
+              Static-first portfolio with client-side blog editor and resume
+              download.
+            </p>
+            <a class="link" href="#" target="_blank" rel="noopener noreferrer"
+              >View project</a
+            >
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img
+                src="assets/images/project1.png"
+                alt="Interactive 3D Menu screenshot"
+              />
+            </div>
+            <h3>TO-DO-App</h3>
+            <p>Responsive To-do List 3D view and Modern animation.</p>
+            <a
+              class="link"
+              href="https://rahman-to-do-app.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View project</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <section class="subscribe">
+        <div class="container">
+          <h3>Start a conversation</h3>
+          <p>
+            If you'd like feedback on code or a collab, reach out — placeholder
+            contact below.
+          </p>
+          <form id="contactForm">
+            <input
+              type="email"
+              placeholder="your.email@example.com"
+              aria-label="Email"
+            />
+            <button type="submit" class="btn">Let's talk</button>
+          </form>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>
+          © <span id="year"></span> ABADURRAHMAN • Third semester, B.Tech CSE
+        </p>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="gallery.html">Photos</a>
+        </nav>
+      </footer>
+    </main>
+  </body>
+</html>

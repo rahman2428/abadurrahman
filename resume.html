@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Resume Builder — ABADURRAHMAN</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<script src="js/resume.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="brand">ABADURRAHMAN</div><nav class="nav"><a href="index.html">Home</a><a href="blog.html">Blog</a><a href="gallery.html">Photos</a></nav></header>
+
+  <main class="container" style="margin-top:28px">
+    <h1>Resume Builder</h1>
+    <p class="subtitle">Fill the fields and click <strong>Generate PDF</strong>.</p>
+
+    <div style="max-width:900px">
+      <input id="name" placeholder="Full name" style="width:100%;padding:10px;margin-bottom:8px">
+      <input id="title" placeholder="Title (eg. Full-Stack Developer)" style="width:100%;padding:10px;margin-bottom:8px">
+      <input id="email" placeholder="Email" style="width:100%;padding:10px;margin-bottom:8px">
+      <input id="phone" placeholder="Phone" style="width:100%;padding:10px;margin-bottom:8px">
+      <textarea id="summary" rows="4" placeholder="Short summary / objective" style="width:100%;padding:10px;margin-bottom:8px"></textarea>
+
+      <h3>Education (one per line: Degree — Institute — Year)</h3>
+      <textarea id="education" rows="3" placeholder="B.Tech Computer Science Engineering — College Name — 2026" style="width:100%;padding:10px;margin-bottom:8px"></textarea>
+
+      <h3>Skills (comma separated)</h3>
+      <input id="skills" placeholder="HTML, CSS, JavaScript, React, Node" style="width:100%;padding:10px;margin-bottom:8px">
+
+      <div style="display:flex;gap:8px">
+        <button id="generate" class="btn primary">Generate PDF</button>
+        <button id="downloadResume" class="btn">Download existing resume.pdf</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><p>© <span id="year"></span> ABADURRAHMAN</p></footer>
+</body>
+</html>

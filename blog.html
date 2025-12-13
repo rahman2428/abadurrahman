@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Blog — ABADURRAHMAN</title>
+
+    <!-- optional: keep your homepage stylesheet for consistent theme -->
+    <link rel="stylesheet" href="css/styles.css"/>
+
+    <!-- lightweight markdown renderer -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
+      defer
+    ></script>
+
+    <!--
+    Write your posts below inside the JSON array.
+    Fields:
+      - slug: unique short string (e.g. "my-first-post")
+      - title: post title
+      - tags: comma separated tags (optional)
+      - body: markdown content (use \n for new lines)
+      - date: ISO date string (optional)
+    Example: add another object to the array to create a new post.
+  -->
+    <script id="initialPosts" type="application/json">
+        [
+
+           {
+            "slug": "A Decision That Changed My Life",
+            "title": "A Decision That Changed My Life",
+           
+            "body": "Taking admission in college is the decision that changed my life. College life completely changed my mindset. This decision is the best decision of my life. I felt that everything is possible when I work hard.\n\nFrom this decision, I learned discipline, patience, and how to focus on my goals. It made me a more confident and responsible person"
+          },
+
+          {
+            "slug": "book-changed-thinking",
+            "title": "A Book That Changed My Thinking",
+
+            
+            "body": "The book **The Power of Your Subconscious Mind** completely changed my thinking. This book teaches that our subconscious mind is very powerful. Whatever we think repeatedly in our subconscious mind can become our reality.\n\nI am impressed with this book because it explains everything in a simple way with real-life examples. This book changed my thoughts and belief system. It helps me every day to stay positive and achieve my goals."
+          },
+          
+          {
+            "slug": "my-room",
+            "title": "My Room",
+            
+            "body": "My room is not very beautiful, but it is good. There are three beds, three chairs, three tables, and three almirahs inside my room. My room is not a separate room because I live in a hostel, so three people live with me.\n\nEveryone uses the things kept in the room. My room is cleaned every week, so it stays neat and tidy. Even though I don’t really like my room, it is an important place in my college life.\n\nIn my room, I sleep, read, eat, and sometimes play games. My room makes me feel safe and confident."
+          }
+        ]
+    </script>
+
+    <script src="js/blog.js" defer></script>
+
+ 
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">ABADURRAHMAN</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="gallery.html">Photos</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="listView">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <div>
+            <h1 style="margin: 0">My Blog</h1>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center">
+            <input
+              id="searchInput"
+              placeholder="Search posts..."
+              style="
+                padding: 8px;
+                border-radius: 8px;
+                border: 1px solid rgba(255, 255, 255, 0.03);
+                background: transparent;
+                color: inherit;
+              "
+            />
+            <button
+              id="exportBtn"
+              style="
+                padding: 8px;
+                border-radius: 8px;
+                border: 0;
+                background: var(--accent);
+                color: #022;
+                cursor: pointer;
+              "
+            >
+              Search
+            </button>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div id="postsList" style="display: grid; gap: 14px"></div>
+      </section>
+
+      <section id="postView" style="display: none; margin-top: 12px">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+          "
+        >
+          <div>
+            <a id="backToList" class="back-link" href="blog.html"
+              >← Back to posts</a
+            >
+            <h1 id="postTitleHeading" style="margin-top: 6px"></h1>               
+            <div id="postMeta" class="post-meta"></div>
+          </div>
+        </div>
+
+        <article id="postContent" class="card"></article>
+      </section>
+    </main>
+
+    <footer style="text-align: center; color: var(--muted); margin-top: 28px">
+      © <span id="year"></span> ABADURRAHMAN
+    </footer>
+  </body>
+</html>

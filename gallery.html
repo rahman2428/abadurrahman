@@ -1,0 +1,208 @@
+ <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Photos — ABADURRAHMAN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    :root {
+      --gap: 16px;
+      --card-radius: 12px;
+      --transition: 220ms;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #0b1220;
+      color: #e6eef8;
+      margin: 0;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .container { max-width:1100px; margin:28px auto; padding:0 18px; }
+
+    header.site-header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 18px;
+    }
+    .brand { font-weight:700; letter-spacing:1px; }
+    .nav a { margin-right:12px; color:inherit; text-decoration:none; opacity:.9; }
+    .hamburger { background:transparent; border:0; color:inherit; font-size:20px; cursor:pointer; }
+
+    h1 { margin:0 0 18px 0; }
+
+    .gallery-banner { width:100%; height:260px; object-fit:cover; border-radius:var(--card-radius); margin-bottom:18px; display:block; }
+
+    /* rows / grid */
+    .row { display:flex; gap:16px; margin-bottom:18px; }
+    .row img { flex:1; height:200px; object-fit:cover; border-radius:12px; display:block; cursor:pointer; }
+
+    /* Hover zoom effect */
+    .zoom {
+      position: relative;
+      overflow: hidden;
+      border-radius:12px;
+      transform: translateZ(0);
+    }
+    .zoom img {
+      transition: transform var(--transition) cubic-bezier(.2,.9,.2,1);
+      will-change: transform;
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .zoom:hover img,
+    .zoom:focus-within img {
+      transform: scale(1.08);
+    }
+
+    /* Lightbox modal */
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(1,6,20,0.85);
+      z-index: 10000;
+      padding: 28px;
+      box-sizing: border-box;
+    }
+    #lightbox[aria-hidden="false"] { display:flex; }
+
+    .lb-card {
+      max-width: 1100px;
+      width: calc(100% - 40px);
+      max-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .lb-photo {
+      background: #07101a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      overflow: hidden;
+      min-height: 300px;
+    }
+    .lb-photo img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      display:block;
+    }
+    .lb-side {
+      background: rgba(255,255,255,0.03);
+      padding: 12px;
+      border-radius: 12px;
+      color: #e6eef8;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      min-width: 220px;
+      box-sizing: border-box;
+    }
+    .lb-controls { display:flex; gap:8px; align-items:center; }
+    .btn { padding:8px 12px; border-radius:10px; border:0; cursor:pointer; background:#0f1724; color:inherit; }
+    .btn.ghost { background:transparent; border:1px solid rgba(255,255,255,0.06); }
+    .meta { font-size:14px; color:rgba(230,238,248,0.85); }
+    .caption { font-weight:600; }
+
+    .nav-btn {
+      background:transparent;
+      border:0;
+      color:inherit;
+      font-size:22px;
+      cursor:pointer;
+      padding:8px;
+    }
+
+    /* responsive */
+    @media (max-width:880px) {
+      .lb-card { grid-template-columns: 1fr; }
+      .row img { height:150px; }
+      .gallery-banner { height:180px; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="brand">ABADURRAHMAN</div>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Photos</a>
+    <a href="assets/resume.pdf" download class="btn">Resume</a>
+  </nav>
+  <button id="menuBtn" class="hamburger" aria-label="Menu">☰</button>
+</header>
+
+<main class="container" id="main">
+  <h1>My Photos</h1>
+
+  <img src="assets/photos/photo1.png" class="gallery-banner" alt="Gallery banner">
+
+  <div class="row">
+    <div class="zoom" tabindex="0"><img src="assets/photos/photo8.jpg" alt="Photo 8"></div>
+    <div class="zoom" tabindex="0"><img src="assets/photos/photo9.jpeg" alt="Photo 9"></div>
+  </div>
+
+  <div class="row">
+    <div class="zoom" tabindex="0"><img src="assets/photos/photo2.jpg" alt="Photo 2"></div>
+    <div class="zoom" tabindex="0"><img src="assets/photos/photo3.jpg" alt="Photo 3"></div>
+    <div class="zoom" tabindex="0"><img src="assets/photos/photo4.jpg" alt="Photo 4"></div>
+  </div>
+
+  <div class="row">
+    <div class="zoom" tabindex="0"><img src="assets/photos/photo5.jpg" alt="Photo 5"></div>
+    <div class="zoom" tabindex="0"><img src="assets/photos/photo6.jpg" alt="Photo 6"></div>
+    <div class="zoom" tabindex="0"><img src="assets/photos/photo7.jpg" alt="Photo 7"></div>
+  </div>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-hidden="true" aria-label="Image viewer">
+  <div class="lb-card" role="document">
+    <div class="lb-photo">
+      <img id="lbImage" alt="">
+    </div>
+    <aside class="lb-side">
+      <div style="display:flex; align-items:center; gap:8px; justify-content:space-between;">
+        <div class="meta" id="lbIndex">1 / 1</div>
+        <div>
+          <button id="lbPrev" class="nav-btn" aria-label="Previous image">◀</button>
+          <button id="lbNext" class="nav-btn" aria-label="Next image">▶</button>
+        </div>
+      </div>
+
+      <div class="caption" id="lbCaption">Filename</div>
+      <div class="meta" id="lbPath"></div>
+
+      <div style="margin-top:auto; display:flex; gap:8px;">
+        <a id="lbDownload" class="btn" href="#" download>Download</a>
+        <button id="lbClose" class="btn ghost" style="margin-left:auto">Close</button>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="site-footer" style="margin-top:40px; text-align:center; padding:18px;">
+  <p>© <span id="year"></span> ABADURRAHMAN</p>
+</footer>
+
+<script src="js/gallery.js"></script>
+</body>
+</html>
