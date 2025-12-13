@@ -1,0 +1,130 @@
+ 
+
+:root {
+  --primary: #00c6ff;
+  --secondary: #0072ff;
+  --dark: #0f2027;
+  --glass: rgba(255, 255, 255, 0.12);
+  --blur: blur(12px);
+}
+
+/* HERO */
+.about-hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+.hero-content p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* CONTAINER */
+.about-container {
+  max-width: 1000px;
+  margin: -80px auto 80px;
+  padding: 0 20px;
+}
+
+/* GLASS CARDS */
+.about-card {
+  background: var(--glass);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 25px 60px rgba(0, 198, 255, 0.25);
+}
+
+.about-card h2 {
+  margin-bottom: 05px;
+  position: relative;
+}
+
+.about-card h2::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  display: block;
+  margin-top: 6px;
+  border-radius: 10px;
+  
+}
+
+.about-card p,
+.about-card li {
+  line-height: 1.7;
+  color: #eaeaea;
+}
+
+.about-card ul {
+  padding-left: 20px;
+}
+
+/* FOOTER */
+.about-footer {
+  text-align: center;
+  padding: 25px;
+  background: #0f2027;
+  color: #aaa;
+}
+
+/* =================
+   ANIMATIONS
+   ================= */
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 0.9s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+}
