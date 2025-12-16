@@ -73,7 +73,7 @@ loader.load(
     }
   },
   (xhr) => {
-    optional: progress indicator
+    // optional: progress indicator
     console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
   },
   (err) => {

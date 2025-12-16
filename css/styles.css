@@ -279,6 +279,8 @@ body{
         margin-left: 14px;
         text-decoration: none;
         font-size: 14px;
+
+      
       }
       .container {
         max-width: 980px;
@@ -400,3 +402,9 @@ body{
   object-fit: cover;   /* 🔑 fixes big image issue */
   display: block;
 }
+
+
+
+
+
+ 

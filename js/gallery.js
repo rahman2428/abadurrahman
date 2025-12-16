@@ -101,3 +101,8 @@
     preload((current - 1 + imgNodes.length) % imgNodes.length);
   };
 
+menuBtn?.addEventListener("click", () => {
+  const nav = document.querySelector(".nav");
+  nav.style.display = nav.style.display === "flex" ? "" : "flex";
+  nav.style.flexDirection = "column";
+});
