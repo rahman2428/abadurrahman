@@ -37,6 +37,8 @@
     <!-- main JS -->
     <script src="./js/main.js" defer></script>
 
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+
   </head>
   <body>
     <header class="site-header">
@@ -45,7 +47,7 @@
         <a href="index.html">Home</a>
         <a href="blog.html">Blog</a>
         <a href="gallery.html">Photos</a>
-        <a href="about.html">About</a>
+        <a href="about.html">About Us</a>
         <a href="assets/resume.pdf" download class="btn">Download Resume</a>
       </nav>
       <button id="menuBtn" class="hamburger" aria-label="Menu">☰</button>
@@ -71,22 +73,22 @@
             <li>✦ Responsive • Accessible • Fast</li>
           </ul>
         </div>
+      
 
-        <div class="hero-right">
-          <!-- Canvas for Three.js -->
-          <div id="three-container" aria-hidden="true">
-            <img
-              src="assets/photos/photo8.jpg"
-              alt="my profile photo"
-              style="
-                width: 100%;
-                max-width: 400px;
-                height: auto;
-                display: block;
-              "
-            />
-          </div>
-        </div>
+        <div id="model-container">
+        <model-viewer 
+            src="assets/models/rahman.glb" 
+            alt="Delicious Burger"
+            auto-rotate 
+            camera-controls
+            shadow-intensity="1"
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            environment-image="neutral">
+            
+             
+        </model-viewer>
+    </div>
       </section>
 
       <section id="work" class="projects">

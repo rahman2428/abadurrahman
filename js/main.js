@@ -114,4 +114,8 @@ animate();
 });
 
 
- 
+ // Log when the model is fully loaded
+const modelViewer = document.querySelector('model-viewer');
+modelViewer.addEventListener('load', () => {
+    console.log("3D Burger Loaded Successfully!");
+});emove("visible");
